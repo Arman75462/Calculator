@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+
+/*=========================================
+ =================RESETS===================
+=========================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: black;
+  font-family: "Nunito Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.container {
+  width: 400px;
+  /*  background-color: red; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 150px;
+  grid-auto-rows: 80px;
+  gap: 5px;
+  padding: 1em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.buttons:hover {
+  transform: scale(0.95);
+}
+
+.orange {
+  background-color: orange;
+}
+
+.soft {
+  background-color: rgb(143, 143, 143);
+}
+
+.dark {
+  background: rgb(66, 66, 66);
+}
+
+/* ========BUTTONS====== */
+
+.screen {
+  grid-column: 1 / 5;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  padding: 1em 2em;
+  font-size: 2rem;
+  border: 2px solid white;
+}
+
+/* FIRST ROW */
+.open-parenthesis {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+.close-parenthesis {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+.clear {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+.division {
+  grid-row: 2 / 3;
+  grid-column: 4 / 5;
+}
+
+/* SECOND ROW */
+.multiplication {
+  grid-row: 3 / 4;
+  grid-column: 4 / 5;
+}
+
+/* THIRD ROW */
+.minus {
+  grid-row: 4 / 5;
+  grid-column: 4 / 5;
+}
+
+/* FOURTH ROW */
+.plus {
+  grid-row: 5 / 6;
+  grid-column: 4 / 5;
+}
+.dot {
+  grid-row: 6 / 7;
+  grid-column: 3 / 4;
+}
+
+/* FIFTH ROW */
+.zero {
+  grid-column: 1 / 3;
+}
+.equal {
+  grid-column: 4 / 5;
+  grid-row: 6 / 7;
+}
