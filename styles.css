@@ -23,13 +23,14 @@ body {
 
 .container {
   width: 400px;
-  /*  background-color: red; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 150px;
   grid-auto-rows: 80px;
   gap: 5px;
   padding: 1em;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
 }
 
 .buttons {
@@ -44,18 +45,21 @@ body {
 }
 
 .orange {
-  background-color: orange;
+    background: orange;
 }
 
 .soft {
-  background-color: rgb(143, 143, 143);
+    background-color: rgb(136, 136, 136);
 }
 
 .dark {
-  background: rgb(66, 66, 66);
+    background-color: rgb(68, 68, 68);
 }
 
 /* ========BUTTONS====== */
+.buttons {
+    border-radius: 15px;
+}
 
 .screen {
   grid-column: 1 / 5;
@@ -64,7 +68,9 @@ body {
   align-items: end;
   padding: 1em 2em;
   font-size: 2rem;
-  border: 2px solid white;
+  border: 2px solid rgb(167, 167, 167);
+  border-radius: 15px;
+
 }
 
 /* FIRST ROW */
