@@ -28,38 +28,43 @@ const nine = document.querySelector('.nine');
 /* ==============================
 =============FUNCTIONALITIES============= 
 ================================*/
-let currentNumber = [];
+let operation = [];
 
 
 /* ==========================
 =============BUTTONS============= 
 ==========================*/
 plus.addEventListener('click', function() {
-    currentNumber.push('+');
+    operation.push('+');
 })
 
 minus.addEventListener('click', function() {
-    currentNumber.push('-');
+    operation.push('-');
 })
 
 multiplication.addEventListener('click', function() {
-    currentNumber.push('*');
+    operation.push('*');
 })
 
 division.addEventListener('click', function() {
-    currentNumber.push('/');
+    operation.push('/');
 })
 
 equal.addEventListener('click', function() {
-    let result = eval(currentNumber.join(''));
-    currentNumber = [];
+    let result = eval(operation.join(''));
+    operation = [];
     console.log(result);
 })
 
 clear.addEventListener('click', function() {
     screen.textContent = '';
-    currentNumber = [];
+    operation = [];
 });
+
+deleteButton.addEventListener('click', function(){
+    operation.pop();
+    console.log(operation)
+})
 
 
 /* ==========================
@@ -67,63 +72,63 @@ clear.addEventListener('click', function() {
 ==========================*/
 zero.addEventListener('click', function() {
     /* screen.textContent = 2; */
-    currentNumber.push('0');
-    console.log(currentNumber);
+    operation.push('0');
+    console.log(operation);
 })
 
 one.addEventListener('click', function() {
     /* screen.textContent = 2; */
-    currentNumber.push('1');
-    console.log(currentNumber);
+    operation.push('1');
+    console.log(operation);
 })
 
 
 two.addEventListener('click', function() {
     /* screen.textContent = 2; */
-    currentNumber.push('2');
-    console.log(currentNumber);
+    operation.push('2');
+    console.log(operation);
 })
 
 three.addEventListener('click', function() {
     /* screen.textContent = 3; */
-    currentNumber.push('3');
-    console.log(currentNumber);
+    operation.push('3');
+    console.log(operation);
 })
 
 four.addEventListener('click', function() {
     /* screen.textContent = 2; */
-    currentNumber.push('4');
-    console.log(currentNumber);
+    operation.push('4');
+    console.log(operation);
 })
 
 five.addEventListener('click', function() {
     /* screen.textContent = 2; */
-    currentNumber.push('5');
-    console.log(currentNumber);
+    operation.push('5');
+    console.log(operation);
 })
 
 six.addEventListener('click', function() {
     /* screen.textContent = 2; */
-    currentNumber.push('6');
-    console.log(currentNumber);
+    operation.push('6');
+    console.log(operation);
 })
 
 seven.addEventListener('click', function() {
     /* screen.textContent = 2; */
-    currentNumber.push('7');
-    console.log(currentNumber);
+    operation.push('7');
+    console.log(operation);
 })
 
 eight.addEventListener('click', function() {
     /* screen.textContent = 2; */
-    currentNumber.push('8');
-    console.log(currentNumber);
+    operation.push('8');
+    console.log(operation);
 })
 
 nine.addEventListener('click', function() {
     /* screen.textContent = 2; */
-    currentNumber.push('9');
-    console.log(currentNumber);
+    operation.push('9');
+    console.log(operation);
 })
 
 
