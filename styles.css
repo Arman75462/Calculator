@@ -1,27 +1,33 @@
+/* Import Google Fonts for a custom font */
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
 
-/*=========================================
- =================RESETS===================
-=========================================== */
+/* ================= RESETS ================= */
+
+/* Apply a consistent box model to all elements */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
 }
 
+/* ================= BODY STYLES ================= */
+
+/* Define styles for the body of the page */
 body {
   min-height: 100vh;
   background: rgb(7, 7, 7);
   font-family: "Nunito Sans", sans-serif;
   color: white;
-  display :flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* ================= CALCULATOR CONTAINER ================= */
+
+/* Style the calculator container */
 .container {
   width: 400px;
   display: grid;
@@ -29,34 +35,42 @@ body {
   grid-template-rows: 170px; /* Screen size */
   grid-auto-rows: 75px; /* Button size */
   gap: 10px;
-  padding: 1.5em ;
+  padding: 1.5em;
   background: #E2CFEA;
   border-radius: 15px;
   box-shadow: 8px 8px 20px 8px black; /* Larger blur and spread radius */
   overflow-y: none;
 }
 
+/* ================= BUTTONS ================= */
+
+/* Common styles for all buttons */
 .buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
   border-radius: 15px;
-  cursor: pointer; 
+  cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  border-radius: 15px;
+  font-weight: 700;
 }
 
+/* Highlight buttons on hover for all buttons*/
 .buttons:hover {
   background-color: black;
   transform: scale(1.05);
 }
 
-.equal{
-  background-color: #F92A82; 
+/* Special styles for specific button types */
+.equal {
+  background-color: #F92A82;
 }
 
-.clear, .delete {
-  background-color: #6A0572; 
+.clear,
+.delete {
+  background-color: #6A0572;
 }
 
 .operator-button {
@@ -64,30 +78,13 @@ body {
 }
 
 .number-button {
-  background-color: #50bbb9; 
+  background-color: #50bbb9;
 }
 
 
-/* ========BUTTONS====== */
-.buttons {
-  border-radius: 15px;
-  font-weight: 700;
-}
+/* ================= CALCULATOR SCREEN ================= */
 
-.display-number {
-  position: absolute; 
-  bottom: 15px; 
-  right: 35px;
-  font-size: 1.7rem;
-}
-
-.display-operation {
-  font-size: 1.4rem;
-  position: absolute;
-  top: 15px;
-  right: 35px;
-}
-
+/* Style the calculator screen */
 .screen {
   position: relative;
   grid-column: 1 / 5;
@@ -100,23 +97,46 @@ body {
   box-shadow: 1px 1px 4px 1px black; /* Larger blur and spread radius */
 }
 
+/* Layout and style for where you display the result */
+.display-result {
+  position: absolute;
+  bottom: 15px;
+  right: 35px;
+  font-size: 1.7rem;
+}
+
+/* Layout and style for where you display the operation */
+.display-operation {
+  font-size: 1.4rem;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+}
+
+
+/* ================= BUTTON PLACEMENT ================= */
+
 /* FIRST ROW */
 .open-parenthesis {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
+
 .close-parenthesis {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
 }
+
 .clear {
   grid-row: 2 / 3;
   grid-column: 1 / 3;
 }
+
 .delete {
   grid-row: 2 / 3;
   grid-column: 3 / 4;
 }
+
 .division {
   grid-row: 2 / 3;
   grid-column: 4 / 5;
@@ -144,10 +164,12 @@ body {
 #zero {
   grid-column: 1 / 2;
 }
+
 .equal {
   grid-column: 3 / 5;
   grid-row: 6 / 7;
 }
+
 .dot {
   grid-row: 6 / 7;
   grid-column: 2 / 3;

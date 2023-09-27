@@ -3,8 +3,10 @@
 /* ==========================
 =============Selectors============= 
 ==========================*/
+
+// DOM elements
 let screen = document.querySelector('.screen');
-let displayNumber = document.querySelector('.display-number');
+let displayResult = document.querySelector('.display-result');
 let displayOperation = document.querySelector('.display-operation');
 let plus = document.querySelector('.plus');
 let minus = document.querySelector('.minus');
@@ -15,7 +17,7 @@ let equal = document.querySelector('.equal');
 let deleteButton = document.querySelector('.delete');
 let dot = document.querySelector('.dot');
 
-/* Numbers */
+// Number buttons
 let zero = document.getElementById('zero');
 let one = document.getElementById('one');
 let two = document.getElementById('two');
@@ -31,13 +33,16 @@ let nine = document.getElementById('nine');
 /* ==============================
 =============FUNCTIONALITIES============= 
 ================================*/
-let operation = [];
-let numberLengthChecker = [];
-const maxCharacters = 20;
 
+// Initialize calculator variables
+let operation = []; // Stores the current mathematical operation
+let numberLengthChecker = []; // Helps detect excessive numbers
+const maxCharacters = 20; // Maximum characters allowed in the display
 
-function updateDisplayNumber() {
+// Update the display with the current operation
+function updateDisplayResult() {
     const displayText = operation.map((item) => {
+         // Replace operators with more readable symbols
         if (item === '*') {
             return ' x ';
         } else if (item === '/') {
@@ -66,21 +71,23 @@ function updateDisplayNumber() {
     console.log(operation);
 }
 
+// Display an error message when too many characters are entered
 function displayMessageTooMuchCharacters(number) {
     if(operation.length === maxCharacters) {
         numberLengthChecker.push(number);
         if(numberLengthChecker.length >= 5) {
+            // Display an error message in displayResult
             displayOperation.textContent = '';
-            displayNumber.textContent = 'Too many numbers. Clear the calculator.';
-            displayNumber.style.color = 'red';
-            displayNumber.style.textAlign = 'center';
-            displayNumber.style.marginTop = '35px';
-            displayNumber.style.position = 'static';
+            displayResult.textContent = 'Too many numbers. Clear the calculator.';
+            displayResult.style.color = 'red';
+            displayResult.style.textAlign = 'center';
+            displayResult.style.marginTop = '35px';
+            displayResult.style.position = 'static';
             console.log(numberLengthChecker.length)
         } 
     } else {
         operation.push(number);
-        updateDisplayNumber();
+        updateDisplayResult();
     }
 }
 
@@ -88,6 +95,8 @@ function displayMessageTooMuchCharacters(number) {
 /* ==========================
 =============BUTTONS============= 
 ==========================*/
+
+// Event listeners for operator buttons
 plus.addEventListener('click', function() {
     displayOperation.textContent = `${operation.join('')} +`;
     operation.push('+');
@@ -109,43 +118,49 @@ division.addEventListener('click', function() {
 })
 
 equal.addEventListener('click', function() {
+     // Calculate and display the result
     let result = eval(operation.join(''));
-    displayNumber.textContent = result;
+    displayResult.textContent = result;
     console.log(result);
 })
 
 clear.addEventListener('click', function() {
-    displayNumber.textContent = '0';
+    // Reset the calculator and clear any error messages
+    displayResult.textContent = '0';
     displayOperation.textContent = '';
     operation = [];
     numberLengthChecker = [];
 
     /* Delete error message */
-    displayNumber.textContent = '0';
-    displayNumber.style.color = 'rgb(73, 73, 73)';
-    displayNumber.style.textAlign = 'left';
-    displayNumber.style.marginTop = '0px';
-    displayNumber.style.position = 'absolute';
-    displayNumber.style.bottom = '15px'
-    displayNumber.style.right = '35px'
+    displayResult.textContent = '0';
+    displayResult.style.color = 'rgb(73, 73, 73)';
+    displayResult.style.textAlign = 'left';
+    displayResult.style.marginTop = '0px';
+    displayResult.style.position = 'absolute';
+    displayResult.style.bottom = '15px'
+    displayResult.style.right = '35px'
 });
 
 deleteButton.addEventListener('click', function(){
+     // Remove the last character from the operation and update the display
     operation.pop();
-    updateDisplayNumber();
+    updateDisplayResult();
 })
 
 dot.addEventListener('click', function() {
+    // Add a decimal point to the current number
     operation.push('.');
-    displayNumber.textContent = '.'
+    displayResult.textContent = '.'
 })
 
 
 /* ==========================
 =============NUMBERS============= 
 ==========================*/
+
+// Event listeners for number buttons
 zero.addEventListener('click', function() {
-   displayMessageTooMuchCharacters(i);
+   displayMessageTooMuchCharacters(0);
 });
 
 one.addEventListener('click', function() {
