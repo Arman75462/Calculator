@@ -74,11 +74,18 @@ body {
   font-weight: 700;
 }
 
-.display {
+.display-number {
   position: absolute; 
   bottom: 15px; 
   right: 35px;
   font-size: 1.7rem;
+}
+
+.display-operation {
+  font-size: 1.4rem;
+  position: absolute;
+  top: 15px;
+  right: 35px;
 }
 
 .screen {
@@ -134,7 +141,7 @@ body {
 }
 
 /* FIFTH ROW */
-.zero {
+#zero {
   grid-column: 1 / 2;
 }
 .equal {
